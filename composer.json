@@ -1,0 +1,19 @@
+{
+    "name": "miguel.castro/mvc",
+    "authors": [
+        {
+            "name": "Miguel Castro",
+            "email": "miguel.castro@lv-digital.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+      "ext-pdo": "*"
+    },
+    "description": ""
+}
