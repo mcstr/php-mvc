@@ -9,10 +9,14 @@ use app\core\Model;
 
 class User extends DbModel
 {
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+    const STATUS_DELETED = 2;
 
     public string $firstname = '';
     public string $lastname = '';
     public string $email = '';
+    public int $status = self::STATUS_INACTIVE;
     public string $password = '';
     public string $confirmPassword = '';
 
@@ -22,9 +26,12 @@ class User extends DbModel
     }
 
 
-    public function register()
+    public function save()
     {
-        return $this->save();
+        $this->status = self::STATUS_INACTIVE;
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+
+        return parent::save();
     }
 
 
@@ -41,6 +48,6 @@ class User extends DbModel
 
     public function attributes(): array
     {
-        return ['firstname', 'lastname', 'email', 'password'];
+        return ['firstname', 'lastname', 'email', 'password', 'status'];
     }
 }
