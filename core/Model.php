@@ -29,6 +29,10 @@ abstract class Model
     // you can tell what the function has to return just adding ':' after the method's declaration
 
     abstract public function rules(): array;
+
+    public function labels(): array {
+        return [];
+    }
     public array $errors = [];
 
     public function validate(){
