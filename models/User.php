@@ -50,4 +50,17 @@ class User extends DbModel
     {
         return ['firstname', 'lastname', 'email', 'password', 'status'];
     }
+
+    public function labels(): array
+    {
+
+        //change the initialized labels array so it is filled with user friendly text
+        return  [
+            'firstname' => 'First Name',
+            'lastname' => 'Last Name',
+            'email' => 'Email',
+            'password' => 'Password',
+            'confirmPassword' => 'Confirm Password',
+        ];
+    }
 }
