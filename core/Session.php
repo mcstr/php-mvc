@@ -49,7 +49,7 @@ class Session
 
     public function remove($key)
     {
-        unser($_SESSION[$key]);
+        unset($_SESSION[$key]);
     }
 
     public function __destruct()
