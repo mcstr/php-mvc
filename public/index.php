@@ -13,6 +13,7 @@ use app\controllers\SiteController;
 use app\core\Application;
 
 $config = [
+    'userClass' => \app\models\User::class,
     'db' => [
         // this is imported from the .env file
         'dsn' => $_ENV['DB_DSN'],
