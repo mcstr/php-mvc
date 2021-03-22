@@ -14,7 +14,7 @@ use app\core\Application;
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <title><?php echo $this->title ?></title>
   </head>
   <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,10 +46,11 @@ use app\core\Application;
               <?php else: ?>
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
+                      <a href="/profile" class="nav-link">Profile</a>
+                  </li>                  <li class="nav-item active">
                       <a href="/logout" class="nav-link">Welcome <?php echo Application::$app->user->getDisplayName() ?>
                         (Logout)
                       </a>
-
                   </li>
               </ul>
               <?php endif; ?>
